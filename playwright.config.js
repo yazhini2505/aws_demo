@@ -34,21 +34,29 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
-  projects: [
+ projects: [
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'Chrome',
+      use: {
+        browserName: 'chromium',
+        channel: 'chrome'
+      }
     },
-
     {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
+      name: 'Firefox',
+      use: {
+        browserName: 'firefox'
+      }
     },
-
     {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+      name: 'Edge',
+         use: {
+        browserName: 'chromium',
+        channel: 'msedge'
+      }
+    }
+  ]
+});
 
     /* Test against mobile viewports. */
     // {
@@ -69,7 +77,7 @@ export default defineConfig({
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
     // },
-  ],
+
 
   /* Run your local dev server before starting the tests */
   // webServer: {
@@ -77,5 +85,4 @@ export default defineConfig({
   //   url: 'http://localhost:3000',
   //   reuseExistingServer: !process.env.CI,
   // },
-});
 
